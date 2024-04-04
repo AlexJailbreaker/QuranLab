@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Quran</title>
+<style>
+
+
+body { background-color: #e5e5f7;
+opacity: 1;
+background-image:  radial-gradient(#444cf7 1.55px, transparent 1.55px), radial-gradient(#444cf7 1.55px, #e5e5f7 1.55px);
+background-size: 62px 62px;
+background-position: 0 0,31px 31px;
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<p align='center' style="font-family: 'Kalam', cursive; cursor:pointer;" > ﴾<span onmouseover="style.backgroundColor='rgba(0,128,0,0.5)'" onmouseout="style.backgroundColor='rgba(0,0,0,0)'" style="border-radius:5px;" onclick="player(16,7000)" >قُلۡ هُوَ ٱللَّهُ أَحَدٌ ۝١</span>  <span onmouseover="style.backgroundColor='rgba(0,128,0,0.5)'" onmouseout="style.backgroundColor='rgba(0,0,0,0)'">َولَمۡ یَكُن لَّهُۥ كُفُوًا أَحَدُۢ ۝٤</span><span onmouseover="style.backgroundColor='rgba(0,128,0,0.5)'" onmouseout="style.backgroundColor='rgba(0,0,0,0)'" style="border-radius:5px;">لَمۡ یَلِدۡ وَلَمۡ یُولَدۡ ۝٣ </span><span onmouseover="style.backgroundColor='rgba(0,128,0,0.5)'" onmouseout="style.backgroundColor='rgba(0,0,0,0)'" style="border-radius:5px;" onclick="player(24,6000)">ٱللَّهُ ٱلصَّمَدُ ۝٢</span>﴿ <p>
+
+
+<br/>
+<audio id="myAudio" >
+  <source src="1.mp3" type="audio/mpeg">
+</audio><br>
+
+
+</body>
+<script>
+
+let x = document.getElementById('myAudio');
+
+function player(time,pausing) {
+	x.currentTime= time ;
+	x.play();
+  	setTimeout(() => {
+   	 x.pause();
+  	}, pausing);
+}
+</script>
+
+</html>

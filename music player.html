@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+
+background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*
+1.
+background: #5A3F37;  
+background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);  
+background: linear-gradient(to right, #2C7744, #5A3F37);
+2.
+background: #DE6262; 
+background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);  
+background: linear-gradient(to right, #FFB88C, #DE6262); 
+3.
+background: #00F260; 
+background: -webkit-linear-gradient(to right, #0575E6, #00F260); 
+background: linear-gradient(to right, #0575E6, #00F260); 
+4.
+background: #0575E6;  
+background: -webkit-linear-gradient(to right, #021B79, #0575E6);  
+background: linear-gradient(to right, #021B79, #0575E6); 
+5.
+background: #6441A5; 
+background: -webkit-linear-gradient(to right, #2a0845, #6441A5); 
+background: linear-gradient(to right, #2a0845, #6441A5); 
+6.
+background: #5433FF; 
+background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); 
+background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); 
+7.
+background: #000000; 
+background: -webkit-linear-gradient(to right, #0f9b0f, #000000); 
+background: linear-gradient(to right, #0f9b0f, #000000); 
+8.
+background: #e1eec3; 
+background: -webkit-linear-gradient(to right, #f05053, #e1eec3); 
+background: linear-gradient(to right, #f05053, #e1eec3); 
+9.
+background: #000000; 
+background: -webkit-linear-gradient(to right, #434343, #000000); 
+background: linear-gradient(to right, #434343, #000000); 
+10.
+background: #0f0c29; 
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+11.
+background: #9CECFB; 
+background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); 
+background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); 
+12.
+background: #0F2027; 
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+13.
+background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+14.
+background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+15.
+background: #005AA7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+*/
+
+p.text_number {
+	font-size:30px;
+	user-select: none;
+	}
+
+div.continer {
+  	width: 400px;
+	height:650px;
+background: #FF8008;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 	position: fixed;
+   	top: 50px;
+  	right:0px;
+	border-radius:25px;
+	float:right;
+	margin-right:100px;
+	border:4px solid red;
+}
+div.continer:hover {
+
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.slidecontainer {
+  width: 90%; /* Width of the outside container */
+}
+
+.slider {
+cursor:pointer;
+  -webkit-appearance: none;
+  width: 96%;
+  height: 2px;
+  border-radius: 10px;  
+  background: black;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%; 
+  background: LightSlateGray;
+	border:1px solid black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+
+#num_verses{
+	user-select: none;
+	border-radius:30px;
+	width:50px;
+	height:50px;
+	font-size:35px;
+	color:white;
+	font-weight:bold;
+	text-align:center;
+	border:10px double white;
+background: #fe8c00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	margin-left:110px;
+	margin-bottom:17px;
+	margin-top:15px;
+}
+
+.num_verses_label {
+	user-select: none;
+	font-size:30px;
+	  background: -webkit-linear-gradient(#F7971E,  #FFD200);
+ 	 -webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	font-weight:bold;
+	font-family:Verdana;
+	}
+
+#proccess,#left_pro,#right_pro {
+		user-select: none;
+		border-radius:7px;
+		background: #F7971E;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		font-size:20px;
+		font-weight:bold;
+		cursor:pointer;
+		margin-bottom:20px;
+		height:70px;
+	}
+#save,#upload {
+		user-select: none;
+		border-radius:7px;
+background: #83a4d4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		font-size:20px;
+		font-weight:bold;
+		cursor:pointer;
+		height:30px;
+}
+
+.verse_text {
+	user-select: none;
+	color:black;
+	border-radius:15px;
+	text-align:center;
+	width:10%;
+	font-weight:bold;
+	font-size:20px;
+	}
+#audioFilepath{
+		color:black;
+		font-size:25px;
+		font-family:Arial;
+		font-weight:bold;
+		margin-right:15px;
+		margin-bottom:20px;
+		background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		border-radius:10px;
+		text-align:center;
+	}
+#audioFilepath:hover{
+border-radius:2px;
+	}
+#audioFilepath::placeholder{
+	color:rgba(0,0,0,0.5);
+	font-size:20px;
+	font-weight:bold;
+	}
+
+
+#surahName_Qari{
+		font-size:30px;
+		font-weight:bold;
+		margin-bottom:0px;
+	}
+
+.verse_text_label{
+		color:white;
+		font-size:25px;
+		font-family:Arial;
+		font-weight:bold;
+		margin-right:15px;
+		margin-bottom:20px;
+	}
+#verses_section {
+		}
+.verse_num_loop{
+		width:40px;
+		height:25px;
+		font-weight:bold;
+		text-align:center;
+		border-radius:10px;
+		font-size:20px;
+	}
+.start_reset{
+  		user-select: none; /* Standard syntax */
+		border-radius:7px;
+		background: #fe8c00;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		margin-top:20px;
+		font-size:20px;
+		font-weight:bold;
+		margin-left:20px;
+		height:50px;
+}
+#titling{
+		font-weight:bold;
+		font-size:60px;
+		color:red;
+		font-family:Arial;
+background: #F85032;
+background: linear-gradient(to right, #F85032 0%, #F16F5C 50%, #F6290C 51%, #F02F17 71%, #E73827 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+	}
+</style>
+
+<script>
+
+/*--------------------------------------------Slider Code --------------------------------------------*/
+/*
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+*/
+/*--------------------------------------------Slider Code --------------------------------------------*/
+
+
+let element_id_tracker;
+
+function convertSecondsToMinutes(seconds) {
+  let minutes = Math.floor(seconds / 60);
+   seconds = seconds % 60;
+
+  let minutesString = minutes.toString();
+  let secondsString = seconds.toString();
+
+  if (minutes < 10) {
+    minutesString =  minutesString;
+  }
+
+  if (seconds < 10) {
+    secondsString = "0"+ secondsString;
+  }
+
+  return minutesString + ":" + secondsString;
+};
+
+
+function element_time_fill(left_right) {
+let audio_element = document.getElementById('myAudio');
+
+	if (left_right == "left"){
+			let left_timestapp=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			document.getElementById(element_id_tracker).value=left_timestapp;
+			audio_element.pause();
+	}
+	else if (left_right == "right"){
+			let right_timestapp="-"+convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			document.getElementById(element_id_tracker).value+=right_timestapp;
+			audio_element.pause();
+		}
+
+		};
+	function validation(input_field){
+		let user_input=document.getElementById(input_field).value;
+		switch(input_field) {
+			case 'start_':
+				if (/^[0-9]+:[0-9]{2}$/.test(user_input)==false || user_input<0 ||  user_input>document.getElementById("myAudio").duration){
+					document.getElementById("start_").value="Invalid";
+					break;
+				}
+			case '_end':
+				if (/^[0-9]+:[0-9]{2}$/.test(user_input)==false || user_input<0 ||  user_input>document.getElementById("myAudio").duration){
+					document.getElementById("_end").value="Invalid";
+					break;
+				}
+			case 'num_verses':
+				if (/^[0-9]+$/.test(user_input)){
+					break;
+				}
+				else {
+					document.getElementById("num_verses").value="Invalid";
+					break;
+				}
+			
+
+		}
+	
+	}
+
+	function checking(){
+		if (document.getElementById('audioFilepath').value=="" || document.getElementById('audioFilepath').value=="File Not Found")  {
+					document.getElementById('proccess').style="background: #e52d27;  background: -webkit-linear-gradient(to right, #b31217, #e52d27); background: linear-gradient(to right, #b31217, #e52d27); border:2px solid white";
+				document.getElementById('audioFilepath').value="File Not Found"
+			}
+		else if (document.getElementById('verses_section').innerHTML.length>5){
+			document.getElementById('proccess').style="background: #e52d27;  background: -webkit-linear-gradient(to right, #b31217, #e52d27); background: linear-gradient(to right, #b31217, #e52d27); border:2px solid white"
+			}	
+		else{
+		document.getElementById('proccess').style="background: #F7971E;background: -webkit-linear-gradient(to right, #FFD200, #F7971E);background: linear-gradient(to right, #FFD200, #F7971E);"
+		const element = document.getElementById("verses_section");
+		//let id_array=["start_","_end","num_verses"];
+		let id_array=["num_verses"];
+		let array_appended=[];
+		for(let i=0; i<id_array.length ; i++){
+			let temp=document.getElementById(id_array[i]).value.trim();
+			if (temp=="Invalid" ||temp.length==0 ){document.getElementById(id_array[i]).value="Input Required"};
+			array_appended.push(document.getElementById(id_array[i]).value);
+		}
+		if (array_appended.toString().indexOf("invalid")==-1 && array_appended.toString().indexOf("Input Required")==-1){
+		for (let i =1; i<=document.getElementById("num_verses").value; i++){
+/* Label creation                                                                       */
+			const label = document.createElement("label");
+			label.for="verse_"+i
+			label.classList.add("verse_text_label");
+			const node = document.createTextNode("Verse "+i);
+			label.appendChild(node);
+/*----------------------------------------------------------------------------------------*/
+/*Input text creation                                                                    */
+			const input = document.createElement("input");
+			input.id="verse_"+i
+			input.onchange=function(){
+				if (/^[0-9]+:[0-9]{2}-[0-9]+:[0-9]+$/.test(this.value)==false){
+					this.value="Invalid"
+				}
+		
+			}
+			input.classList.add("verse_text");
+			input.onclick=function () {element_id_tracker=this.id}
+			input.pattern="^[0-9]+:[0-9]+-[0-9]+:[0-9]+$"
+/*----------------------------------------------------------------------------------------*/
+/*line break creation                                                                    */
+
+			const line_break = document.createElement("br");
+/*----------------------------------------------------------------------------------------*/
+/*input number creation                                                                    */
+			const input_number = document.createElement("input");
+			input_number.type="number";
+			input_number.id="verse_"+i+"_repitition";
+			input_number.classList.add("verse_num_loop");
+			input_number.onchange=function(){if ((this.value)>20 ||  (this.value)<1 ){this.value="1"}}
+			input_number.onclick=function () {element_id_tracker=this.id}
+/*----------------------------------------------------------------------------------------*/
+			element.appendChild(label);
+			element.appendChild(input);
+			element.appendChild(input_number);
+			element.appendChild(line_break);
+
+			}
+		/*Start button                                                                           */
+			const start_button = document.createElement("button");
+			const node = document.createTextNode("Start");
+			start_button.appendChild(node);
+			start_button.onclick=function() { 
+				current_verse = 1
+				player(1);
+			}
+			start_button.classList.add("start_reset");
+		/*----------------------------------------------------------------------------------------*/
+		/*Reset                                                                                   */
+			const reset_button = document.createElement("button");
+			const node_1 = document.createTextNode("Reset");
+			reset_button.appendChild(node_1);
+			reset_button.classList.add("start_reset");
+			reset_button.onclick=function() { 
+				element.innerHTML=" "
+				document.getElementById("start_").value="";
+				document.getElementById("_end").value=""
+				document.getElementById("num_verses").value=""
+				
+				
+			}
+		/*----------------------------------------------------------------------------------------*/
+			element.appendChild(start_button);
+			element.appendChild(reset_button);
+		}
+		}
+	}
+function toSeconds(time) {
+  // Split the time string into hours, minutes, and seconds.
+  const [minutes, seconds] = time.split(':');
+
+  // Convert the minutes to seconds.
+  const minutesInSeconds = minutes * 60;
+
+  // Add the minutes and seconds together.
+  return minutesInSeconds + seconds/1;
+}
+let countering=1;
+let num_verses;
+let current_verse = 1;
+	function player(i) {
+		let audio_element = document.getElementById('myAudio');
+		num_verses = document.getElementById("num_verses").value;
+		let time_stap=document.getElementById("verse_"+i).value;
+		let time_stap_array=time_stap.split("-");
+		let start_time=toSeconds(time_stap_array[0]);
+		let end_time=toSeconds(time_stap_array[1]);
+		let num_loop=document.getElementById("verse_"+i+"_repitition").value;//Number of loops for each verse
+		audio_element.currentTime=start_time;
+		audio_element.play();	
+		stop_adio_after_specific_time(audio_element,end_time,num_loop)
+		 }
+
+
+
+function stop_adio_after_specific_time(audio_element, stop_time_in_seconds, num_loop) {
+  const timerID = setInterval(() => {
+    if (audio_element.currentTime > (stop_time_in_seconds - 0.5)) {
+      audio_element.pause();
+      clearInterval(timerID);
+
+      if (countering < num_loop) {
+        countering += 1;
+         player(current_verse);
+      } else {
+        countering = 1; // resets for next verse to play
+        if (num_verses > current_verse) {
+          current_verse += 1;
+          player(current_verse);
+        } else if (num_verses == current_verse) {
+          current_verse = 1;
+        }
+      }
+    } else {
+    }
+  }, 1000);
+};
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+	 <h1 id='titling' style="display:inline-block ;vertical-align: top;">Quran Lab</h1><br/><br/>
+	<input type="text" id="audioFilepath" onchange="omar(this.value)" placeholder="Audio Filepath">
+	<audio id="myAudio"  >
+		<source id="audio_file_path"  type="audio/mp3" />
+	</audio></br>
+	<label for="num_verses" class="num_verses_label">Enter # verses:</label><img  src="save_1.png"  width=50px;  style="user-select: none;position: relative;
+  left: 10px;top:15px ; cursor:pointer" onmouseover="this.src='save_2.png'" onmouseout="this.src='save_1.png'" onclick="this.src='save_1.png'; save_upload('s') "/><img  src="upload_1.png"  width=65px;  style="user-select: none;position: relative;
+  left: 15px;top:27px ; cursor:pointer" onmouseover="this.src='upload_2.png'" onmouseout="this.src='upload_1.png'" onclick="this.src='upload_1.png' ; save_upload('u')  "/><textarea style="position: absolute;left: 350px;top:350px ; display:none" id="upload_textarea" rows=10 cols=50 onchange="upload_func(this.value)"></textarea>
+<br/><input type='text' id="num_verses" onchange="validation('num_verses')" ><br/><button 	onclick="checking()" id="proccess" >Action</button><button id="left_pro" onclick=" element_time_fill('left')">Start</button><button id="right_pro" onclick="element_time_fill('right')">Finish</button>
+<div id="verses_section">
+</div>
+
+
+
+<!---------------------------------------------------------	layer------------------------------------------------------------------------------------------>
+<div class="continer">
+<img src="vinyl.png" width=180px; style="padding:0px;  position: relative;
+  left: 105px;top:50px ;text-align:center;user-select: none;"  id='disc_image'>
+
+<p id = "surahName_Qari" 
+style="padding:0px;  text-align:center;
+margin-top:70px ;"></p>
+
+<div class="slidecontainer" style="user-select: none;position: relative;left: 20px;top:25px">
+ <input type="range" min="0" max="100" value="0" class="slider" id="myRange" onchange="slider_change(this.value)">
+<p id="time_progross" style="display: inline-block;font-size:20px; user-select: none; " class="text_number">0:00</p>
+<p id="total_time" style="display: inline-block ; position:relative ; left:260px; font-size:20px;user-select: none;" class="text_number" >00:00</p>
+</div>	
+
+<img  src="play-button.png"  width=100px; id="play_button" style="user-select: none;position: relative;
+  left: 150px;top:60px ; cursor:pointer" onmouseover="this.src='play-button(2).png'" onmouseout="this.src='play-button.png'" onclick="audio_element.play()">
+
+<img  src="pause.png"  id="pause_button"width=100px; style=" user-select: none ; position: relative;
+  left: 150px;top:60px ; cursor:pointer; display:none" onclick="this.style.display='none'; document.getElementById('play_button').style.display='initial';audio_element.pause(); " onmouseover="this.src='pause(1).png'" onmouseout="this.src='pause.png'" >
+
+
+<img  src="two_right_1.png"  width=60px; style=" user-select: none ; position: relative;
+  left: 195px;top:40px ; cursor:pointer" onmouseover="this.src='two_right_2.png' " onmouseout="this.src='two_right_1.png' "  onclick="forward_backward(2)">
+
+<img  src="five_left_1.png"  width=60px; style=" user-select: none ;  position: relative;
+  left: -130px;top:40px ; cursor:pointer" onmouseover="this.src='five_left_2.png' " onmouseout="this.src='five_left_1.png'" onclick="forward_backward(5)" >
+
+<img  src="volume.png"  width=50px; style=" user-select: none ;  position: relative;
+  left: -200px;top:130px ; cursor:pointer" onmouseover="this.src='volume(1).png' " onmouseout="this.src='volume.png' " onclick="(document.getElementById('volume_controler').style.display=='none')?document.getElementById('volume_controler').style.display='initial' : document.getElementById('volume_controler').style.display='none'">
+
+<input type="range" style=" user-select: none ;  display:none; position: relative;
+  left: 90px;top:90px ; cursor: -webkit-grab; cursor: grab;" id="volume_controler" onchange="volume_control(this.value)" value=10 min=0 max=10 >
+
+
+
+
+</div> 
+<!---------------------------------------------------------Music Player------------------------------------------------------------------------------------------>
+
+</body>
+<script>
+
+
+let audio_element = document.getElementById('myAudio');
+function omar (file) {
+	let audio_element = document.getElementById('myAudio');
+	if (file.at(0) === '"' && file.at(-1) === '"') {
+ 	 file = file.slice(1, -1);
+		}
+  	audio_element.src=file;
+	let final_array = file.replaceAll("_"," ").replaceAll("   "," ").replaceAll(","," ").replaceAll(".mp3","").replaceAll("    "," ").replace("  "," ").replaceAll("D:\\","").split(" ");
+	let surahIndex= final_array.indexOf("سورة"); 
+	document.getElementById('surahName_Qari').innerHTML=" سورة " + final_array[surahIndex+1] 
+	 }
+audio_element.onerror = function () {
+		console.log(audio_element.error.code);
+		document.getElementById("audioFilepath").value="File Not Found";
+		document.getElementById('total_time').innerHTML='00:00';
+		document.getElementById('surahName_Qari').innerHTML=""
+	}
+let slider = document.getElementById("myRange");
+let myInterval;
+audio_element .onplaying = function() {
+document.getElementById('play_button').style.display='none';
+document.getElementById('pause_button').style.display='initial'; 
+document.getElementById('disc_image').classList.add("rotate");
+myInterval = setInterval(function () {document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+	slider.value= (Math.floor(audio_element.currentTime) * 100)/ audio_element.duration;
+			}, 500 );
+};
+
+function forward_backward (seconds){
+		if (seconds==5 && audio_element.paused==true){
+			audio_element.pause();
+			audio_element.currentTime=audio_element.currentTime-5;
+			document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			slider.value= (Math.floor(audio_element.currentTime) * 100)/ audio_element.duration;
+			}
+		else if (seconds==5 && audio_element.paused==false){
+			audio_element.pause();
+			audio_element.currentTime=audio_element.currentTime-5;
+			document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			slider.value= (Math.floor(audio_element.currentTime) * 100)/ audio_element.duration;
+			audio_element.play();
+			}
+			else if (seconds==2 && audio_element.paused==false){
+			audio_element.pause();
+			audio_element.currentTime=audio_element.currentTime+2;
+			document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			slider.value= (Math.floor(audio_element.currentTime) * 100)/ audio_element.duration;
+			audio_element.play();
+			}
+			else if (seconds==2 && audio_element.paused==true){
+			audio_element.pause();
+			audio_element.currentTime=audio_element.currentTime+2;
+			document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor(audio_element.currentTime));
+			slider.value= (Math.floor(audio_element.currentTime) * 100)/ audio_element.duration;
+			}		
+	}
+
+function slider_change (value){
+	if (audio_element.paused==true){
+	audio_element.pause();
+	audio_element.currentTime=Math.floor((value * audio_element.duration)/100);
+	document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor((value * audio_element.duration)/100))}
+	else {
+			audio_element.pause();
+			audio_element.currentTime=Math.floor((value * audio_element.duration)/100);
+			document.getElementById("time_progross").innerHTML=convertSecondsToMinutes(Math.floor((value * audio_element.duration)/100));
+			audio_element.play();
+		}
+	}
+
+audio_element .onpause=function () {
+	clearInterval(myInterval);
+	document.getElementById('play_button').style.display='initial';
+	document.getElementById('pause_button').style.display='none'; 
+	document.getElementById('disc_image').classList.remove("rotate");
+	}
+
+
+function volume_control(volume_value){
+	if (volume_value==0){
+		audio_element.volume=0.0
+		}
+	else {
+		audio_element.volume=volume_value/10;
+		}
+	setTimeout(function () {
+	document.getElementById('volume_controler').style.display='none';
+	}, 3000);	
+
+	}
+
+function speed_control(){
+  const input = document.getElementById("lol");
+  const file = input.files[0];
+  const fullPath = file.fullPath;
+  console.log(fullPath);
+	}
+
+function save_upload(variable){
+	 if(variable=='s') {
+			if (document.getElementById('verses_section').innerHTML.length>20){
+				JSobj={} 
+				JSobj.audioFilepath=document.getElementById("audioFilepath").value;
+				JSobj.num_verses=document.getElementById("num_verses").value;
+				for (let i=0; i < document.getElementById("num_verses").value ; i++){
+					JSobj["verse_"+(i+1)+"_repitition"]=document.getElementById("verse_"+(i+1)+"_repitition").value;
+					JSobj["verse_"+(i+1)]=document.getElementById("verse_"+(i+1)).value;
+					}
+				console.log(JSobj);
+				JSONobj=JSON.stringify(JSobj);
+				navigator.clipboard.writeText(JSONobj);
+				alert("Copied");
+				}		
+				
+		}
+	else if (variable=='u'){
+			if (document.getElementById('upload_textarea').style.display=="initial"){
+			document.getElementById('upload_textarea').style.display="none"} 
+			else {
+				document.getElementById('upload_textarea').style.display="initial"
+					};
+				document.getElementById('upload_textarea')
+			}
+	}
+function upload_func(jsonObj){
+let jsobj;
+try {
+	jsobj=JSON.parse(jsonObj);
+	document.getElementById('upload_textarea').style.backgroundColor="white";
+	let action_press=false
+	for (let key in jsobj){
+			if (action_press==true) {;action_press=false;checking()}
+			if (key=="num_verses"){action_press=true}
+			document.getElementById(key).value=jsobj[key];
+			}
+	omar(document.getElementById("audioFilepath").value);
+	const myTimeout = setTimeout(document.getElementById('upload_textarea').style.display='none', 5000);
+	}
+catch(err) {
+	document.getElementById('upload_textarea').style.backgroundColor="red";
+	document.getElementById('upload_textarea').style.border="2px solid white";
+}
+	
+
+	}
+</script>
+</html>
